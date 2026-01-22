@@ -1,0 +1,17 @@
+<group name="pesd,privilege_escalation,">
+
+  <rule id="110000" level="3">
+    <decoded_as>json</decoded_as>
+    <field name="schema">pesd.v1</field>
+    <description>PESD event received</description>
+  </rule>
+
+  <rule id="110010" level="10">
+    <if_sid>110000</if_sid>
+    <field name="os_family">linux</field>
+    <field name="event_type">sudo_attempt</field>
+    <field name="result">success</field>
+    <description>🚨 PrivEsc: sudo success (Linux) user=$(user) cmd=$(command)</description>
+  </rule>
+
+</group>
