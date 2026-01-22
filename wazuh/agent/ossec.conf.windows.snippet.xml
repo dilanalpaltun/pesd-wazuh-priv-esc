@@ -1,0 +1,6 @@
+<ossec_config>
+  <localfile>
+    <log_format>json</log_format>
+    <location>C:\ProgramData\PESD\pesd-events.jsonl</location>
+  </localfile>
+</ossec_config>
